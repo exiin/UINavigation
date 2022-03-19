@@ -35,6 +35,7 @@ protected:
 	bool bMovingSelector = false;
 	bool bIgnoreMouseEvent = false;
 	bool bReturning = false;
+	bool bCanceling = false;
 		
 	bool bShouldTickUINavSetup = false;
 	int UINavSetupWaitForTick=0;
@@ -993,6 +994,8 @@ public:
 	virtual void MenuSelectRelease();
 	virtual void MenuReturnPress();
 	virtual void MenuReturnRelease();
+	virtual void MenuCancelPress();
+	virtual void MenuCancelRelease();
 
 	void FinishPress(const bool bMouse);
 

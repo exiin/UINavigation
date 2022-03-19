@@ -3562,3 +3562,30 @@ void UUINavWidget::MenuReturnRelease()
 	CollectionOnReturn();
 	OnReturn();
 }
+
+void UUINavWidget::MenuCancelPress()
+{
+	bCanceling = true;
+}
+
+void UUINavWidget::MenuCancelRelease()
+{
+	if (!bCanceling) return;
+
+	if (IsRebindingInput())
+	{
+		CancelRebind();
+		return;
+	}
+
+	if (bMovingSelector)
+	{
+		HaltedIndex = RETURN_INDEX;
+		return;
+	}
+	
+	bCanceling = false;
+
+	CollectionOnReturn();
+	OnReturn();
+}
