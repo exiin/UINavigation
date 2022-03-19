@@ -2730,7 +2730,7 @@ void UUINavWidget::ReturnToParent(const bool bRemoveAllParents, const int ZOrder
 			{
 				WidgetComp->SetWidget(nullptr);
 			}
-			else
+			else if (bCanBeRemovedFromParent)
 			{
 				bReturningToParent = true;
 				RemoveFromParent();

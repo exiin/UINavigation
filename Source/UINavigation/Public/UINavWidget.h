@@ -287,11 +287,11 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "UINavigation Text", meta = (EditCondition = "bUseTextColor"))
 	FLinearColor TextNavigatedColor = FColor::Green;
 
+	UPROPERTY(EditDefaultsOnly, Category = UINavWidget)
+	bool bCanBeRemovedFromParent = true;
 
+	/********************************************************************************/
 
-	/*********************************************************************************/
-
-	
 	virtual void NativeConstruct() override;
 
 	virtual void NativeTick(const FGeometry & MyGeometry, float DeltaTime) override;
