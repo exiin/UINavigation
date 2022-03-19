@@ -703,7 +703,7 @@ public:
 	/**
 	*	Returns the button that will be navigated to according to the given direction, starting at the given button
 	*
-	*	@param Button  Required button type for the UI Navigation plugin
+	*	@param Button  Target UINavButton
 	*	@param	Direction  Direction of navigation
 	*	@return UUINavButton* The button that will be navigated to
 	*/
@@ -714,7 +714,7 @@ public:
 	*	Returns the next button to navigate to
 	*
 	*	@param	Direction  Direction of navigation
-	*	@param  Button  Required button type for the UI Navigation plugin
+	*	@param  Button  Target UINavButton
 	*/
 	class UUINavButton* FetchButtonByDirection(const ENavigationDirection Direction, UUINavButton* Button);
 
@@ -724,7 +724,7 @@ public:
 	*	@param	NewWidgetClass  The class of the widget to add to the screen
 	*	@param	bRemoveParent  Whether to remove the parent widget (this widget) from the viewport
 	*	@param  bDestroyParent  Whether to destruct the parent widget (this widget)
-	*	@param  ZOrder order to display the widget
+	*	@param  ZOrder Order to display the widget
 	*/
 	UFUNCTION(BlueprintCallable, Category = UINavWidget, meta = (AdvancedDisplay=2))
 	UUINavWidget* GoToWidget(TSubclassOf<UUINavWidget> NewWidgetClass, const bool bRemoveParent, const bool bDestroyParent = false, const int ZOrder = 0);
@@ -735,7 +735,7 @@ public:
 	*	@param	NewWidget  Object instance of the UINavWidget to add to the screen
 	*	@param	bRemoveParent  Whether to remove the parent widget (this widget) from the viewport
 	*	@param  bDestroyParent  Whether to destruct the parent widget (this widget)
-	*	@param  ZOrder order to display the widget
+	*	@param  ZOrder Order to display the widget
 	*/
 	UFUNCTION(BlueprintCallable, Category = UINavWidget, meta = (AdvancedDisplay=2))
 	UUINavWidget* GoToBuiltWidget(UUINavWidget* NewWidget, const bool bRemoveParent, const bool bDestroyParent = false, const int ZOrder = 0);
